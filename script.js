@@ -230,6 +230,16 @@ let teclaRaiz = () => {
     atualizaVisor()
 }
 
+let teclaInverso= () => {
+    calculadora.teclaInverso()
+    atualizaVisor()          
+}
+
+let teclaInversaoDeSinal = () => {
+    calculadora.teclaInversaoDeSinal()
+    atualizaVisor()
+}
+
 // ========================================================
 //  INÍCIO DO PROCESSAMENTO
 // ========================================================
