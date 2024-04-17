@@ -146,6 +146,17 @@ class Calculadora {
         }
         this.nrVisor = Math.sqrt(numVisor).toString().slice(0, 10); // o numero do visor é calculado a raiz (Math.sqrt) e transformado para String, além de ser limitado a ter no máximo 10 casas decimais no visor
     }
+
+    teclaInverso() {
+        if (this.estadoErro) return; // Verifica se está em estado de erro
+         let numVisor = parseFloat(this.nrVisor); // Converte o número do visor em float
+         if (numVisor == 0) { // Verifica se o número no visor é zero
+         this.estadoErro = true;
+         return;
+     }
+         this.nrVisor = (1 / numVisor).toString().slice(0, 10); // Calcula o inverso e atualiza o visor
+  
+     }
     
 
 }
