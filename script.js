@@ -136,6 +136,18 @@ class Calculadora {
         this.memoria = 0;
     }
 
+    // tecla Raiz: representar a tecla de raiz quadrada. Esta tecla substitui o conteúdo do visor pela sua raiz quadrada, mas não tem nenhum outro impacto nas demais operações.
+    teclaRaiz() {
+        if (this.estadoErro) return; // se estiver em estado de erro, a função retorna imediatamente.
+        let numVisor = parseFloat(this.nrVisor); // transforma o número do visor atual de string para um float, para que possa manipular esse número
+        if (numVisor < 0) { // se o número do visor for negativo, retornarrá "Erro" já que a raiz quadrada de um número negativo não é um número real
+            this.estadoErro = true;
+            return;
+        }
+        this.nrVisor = Math.sqrt(numVisor).toString().slice(0, 10); // o numero do visor é calculado a raiz (Math.sqrt) e transformado para String, além de ser limitado a ter no máximo 10 casas decimais no visor
+    }
+    
+
 }
 
 // ==================================================================
@@ -193,6 +205,12 @@ let teclaRM = () => {
 // APAGA TODO O CONTEÚDO DA MEMÓRIA
 let teclaCLM = () => {
     calculadora.teclaCLM();
+}
+
+// SUBSTITUI O CONTEÚDO DO VISOR
+let teclaRaiz = () => {
+    calculadora.teclaRaiz()
+    atualizaVisor()
 }
 
 // ========================================================
