@@ -157,6 +157,12 @@ class Calculadora {
          this.nrVisor = (1 / numVisor).toString().slice(0, 10); // Calcula o inverso e atualiza o visor
   
      }
+
+     teclaInversaoDeSinal(){
+        if (this.estadoErro) return; // Verifica se está em estado de erro
+    	let numVisor = parseFloat(this.nrVisor); // Converte o número do visor em float
+    	this.nrVisor = (-numVisor).toString().slice(0, 10); // Inverte o sinal e atualiza o visor
+    }
     
 
 }
