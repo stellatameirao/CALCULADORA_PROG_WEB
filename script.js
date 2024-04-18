@@ -31,7 +31,7 @@ class Calculadora {
         if (this.simboloOperacao !== '' && this.memTemp !== '') {
             visor = this.memTemp + ' ' + this.simboloOperacao + ' ' + this.nrVisor;
         }
-        return this.nrVisor;
+        return visor;
     }
 
     // recebe dígito
