@@ -184,8 +184,29 @@ class Calculadora {
     	let numVisor = parseFloat(this.nrVisor); // Converte o número do visor em float
     	this.nrVisor = (-numVisor).toString().slice(0, 10); // Inverte o sinal e atualiza o visor
     }
-    
 
+    // Tecla ON/OFF
+    teclaOFF() {
+        this.nrVisor = ' ';
+        this.ptDecimal = false;
+        this.iniciouSegundo = false;
+        this.memTemp = '';
+        this.estadoErro = false;
+        this.memoria = 0;
+        this.opAtual = this.op.NOP;
+        this.simboloOperacao = ''; 
+    }
+
+    teclaON() {
+        this.nrVisor = '0';
+        this.ptDecimal = false;
+        this.iniciouSegundo = false;
+        this.memTemp = '';
+        this.estadoErro = false;
+        this.memoria = 0;
+        this.opAtual = this.op.NOP;
+        this.simboloOperacao = ''; 
+    }
 }
 
 // ==================================================================
@@ -262,13 +283,24 @@ let teclaQuadrado = () => {
     atualizaVisor()
 }
 
-    let teclaInverso= () => {
-        calculadora.teclaInverso()
-        atualizaVisor()          
-    }
+let teclaInverso= () => {
+    calculadora.teclaInverso()
+    atualizaVisor()          
+}
     
-    let teclaInversaoDeSinal = () => {
-        calculadora.teclaInversaoDeSinal()
+let teclaInversaoDeSinal = () => {
+    calculadora.teclaInversaoDeSinal()
+    atualizaVisor()
+}
+
+let teclaOFF = () => {
+    calculadora.teclaOFF()
+    atualizaVisor()
+}
+
+let teclaON = () => {
+    calculadora.teclaON()
+    atualizaVisor()
 }
 
 // ========================================================
