@@ -27,6 +27,7 @@ body {
     width: 75%;
     text-align: right;
     margin: auto;
+    height: 50px;
     border: 8px solid rgb(70, 130, 180);
     border-radius: 15px;
     background-color: black;
