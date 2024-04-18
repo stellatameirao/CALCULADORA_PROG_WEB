@@ -160,6 +160,14 @@ class Calculadora {
         atualizaVisor(); // Atualiza o visor no HTML
     }
 
+    // ELEVA AO QUADRADO O NÚMERO INTRODUZIDO NO VISOR
+    teclaQuadrado() {
+        if (this.estadoErro) return; // Verifica se está em estado de erro
+        let numVisor = parseFloat(this.nrVisor); // Converte o número do visor em float
+        this.nrVisor = (numVisor * numVisor).toString().slice(0, 10); // Calcula o quadrado e atualiza o visor
+        atualizaVisor(); // Atualiza o visor no HTML
+    }
+
     teclaInverso() {
         if (this.estadoErro) return; // Verifica se está em estado de erro
          let numVisor = parseFloat(this.nrVisor); // Converte o número do visor em float
@@ -247,6 +255,12 @@ let teclaRaiz = () => {
 let teclaPorcentagem = () => {
     calculadora.teclaPorcentagem()
     atualizaVisor()
+
+// ELEVA O NÚMERO MOSTRADO NO VISOR AO QUADRADO
+let teclaQuadrado = () => {
+    calculadora.teclaQuadrado()
+    atualizaVisor()
+}
 
     let teclaInverso= () => {
         calculadora.teclaInverso()
