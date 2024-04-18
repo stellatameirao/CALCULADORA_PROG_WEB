@@ -15,6 +15,7 @@ class Calculadora {
             SUM: 4
         };
         this.opAtual = this.op.NOP;
+        this.simboloOperacao = ''; 
     }
 
     mostrarVisor() {
@@ -24,6 +25,11 @@ class Calculadora {
         }
         if (this.nrVisor.length == 0) {
             this.nrVisor = '0';
+        }
+        let visor = '';
+        visor += this.nrVisor;
+        if (this.simboloOperacao !== '' && this.memTemp !== '') {
+            visor = this.memTemp + ' ' + this.simboloOperacao + ' ' + this.nrVisor;
         }
         return this.nrVisor;
     }
@@ -56,15 +62,19 @@ class Calculadora {
         switch (op) {
             case '+':
                 this.opAtual = this.op.SUM;
+                this.simboloOperacao = "+";
                 break;
             case '-':
                 this.opAtual = this.op.SUB;
+                this.simboloOperacao = "-"; 
                 break;
             case '*':
                 this.opAtual = this.op.MULT;
+                this.simboloOperacao = "x"; 
                 break;
             case '/':
                 this.opAtual = this.op.DIV;
+                this.simboloOperacao = "/"; 
                 break;
         }
         this.memTemp = this.nrVisor;
@@ -110,6 +120,11 @@ class Calculadora {
         this.opAtual = this.op.NOP;
         this.memTemp = '';
         this.estadoErro = false;
+        this.simboloOperacao = '';
+
+        if (this.nrVisor === '-0') {
+            this.nrVisor = '0';
+            }
     }
 
     // tecla M+ : acrescenta à memória o número no visor
