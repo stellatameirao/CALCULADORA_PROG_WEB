@@ -283,39 +283,40 @@ let teclaCLM = () => {
 
 // SUBSTITUI O CONTEÚDO DO VISOR
 let teclaRaiz = () => {
-    calculadora.teclaRaiz()
-    atualizaVisor()
+    calculadora.teclaRaiz();
+    atualizaVisor();
 }
 
 // CALCULA A PORCENTAGEM
 let teclaPorcentagem = () => {
-    calculadora.teclaPorcentagem()
-    atualizaVisor()
+    calculadora.teclaPorcentagem();
+    atualizaVisor();
+}
 
 // ELEVA O NÚMERO MOSTRADO NO VISOR AO QUADRADO
 let teclaQuadrado = () => {
-    calculadora.teclaQuadrado()
-    atualizaVisor()
+    calculadora.teclaQuadrado();
+    atualizaVisor();
 }
 
 let teclaInverso= () => {
-    calculadora.teclaInverso()
-    atualizaVisor()          
+    calculadora.teclaInverso();
+    atualizaVisor();
 }
     
 let teclaInversaoDeSinal = () => {
-    calculadora.teclaInversaoDeSinal()
-    atualizaVisor()
+    calculadora.teclaInversaoDeSinal();
+    atualizaVisor();
 }
 
 let teclaOFF = () => {
-    calculadora.teclaOFF()
-    atualizaVisor()
+    calculadora.teclaOFF();
+    atualizaVisor();
 }
 
 let teclaON = () => {
-    calculadora.teclaON()
-    atualizaVisor()
+    calculadora.teclaON();
+    atualizaVisor();
 }
 
 // ========================================================
