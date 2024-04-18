@@ -147,6 +147,19 @@ class Calculadora {
         this.nrVisor = Math.sqrt(numVisor).toString().slice(0, 10); // o numero do visor é calculado a raiz (Math.sqrt) e transformado para String, além de ser limitado a ter no máximo 10 casas decimais no visor
     }
 
+    // CALCULA A PORCENTAGEM DO NÚMERO NO VISOR 
+    teclaPorcentagem() {
+        if (this.estadoErro) return; // Verifica se está em estado de erro
+        let numVisor = parseFloat(this.nrVisor); // Transforma o número do visor atual em float
+        if (isNaN(numVisor)) { // Verifica se o número no visor é válido
+            this.estadoErro = true;
+            return;
+        }
+        let porcentagem = (parseFloat(this.memTemp) * numVisor) / 100; // Calcula a porcentagem usando o número na memória e o número atual no visor
+        this.nrVisor = porcentagem.toString().slice(0, 10); // Atualiza o visor com o resultado da porcentagem, limitando a 10 caracteres
+        atualizaVisor(); // Atualiza o visor no HTML
+    }
+
     teclaInverso() {
         if (this.estadoErro) return; // Verifica se está em estado de erro
          let numVisor = parseFloat(this.nrVisor); // Converte o número do visor em float
@@ -230,14 +243,18 @@ let teclaRaiz = () => {
     atualizaVisor()
 }
 
-let teclaInverso= () => {
-    calculadora.teclaInverso()
-    atualizaVisor()          
-}
-
-let teclaInversaoDeSinal = () => {
-    calculadora.teclaInversaoDeSinal()
+// CALCULA A PORCENTAGEM
+let teclaPorcentagem = () => {
+    calculadora.teclaPorcentagem()
     atualizaVisor()
+
+    let teclaInverso= () => {
+        calculadora.teclaInverso()
+        atualizaVisor()          
+    }
+    
+    let teclaInversaoDeSinal = () => {
+        calculadora.teclaInversaoDeSinal()
 }
 
 // ========================================================
